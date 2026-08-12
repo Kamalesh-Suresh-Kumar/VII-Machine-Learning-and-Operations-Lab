@@ -1,10 +1,30 @@
-# Python Environment
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
 .venv/
+venv/
+env/
 
-# Jenkins
-target/
-
-# MLflow
-*.db
+# MLflow local tracking data
+mlflow.db
 mlruns/
+mlartifacts/
 
+# MLflow generated files
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+target/
