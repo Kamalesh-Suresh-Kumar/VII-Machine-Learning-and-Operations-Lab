@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Kamalesh-Suresh-Kumar/VII-Machine-Learning-and-Operations-Lab.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('Ex 2/code/mlops-ci') {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('Ex 2/code/mlops-ci') {
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+            }
+        }
+    }
+}
