@@ -91,7 +91,7 @@ The output also confirms that:
 
 The following screenshot provides evidence of the successful Docker installation and execution of the `hello-world` container.
 
-![Docker Hello World Output](outputs/Screenshot 2026-08-13 003723.png)
+![Docker Hello World Output](outputs/docker-hello-world.png)
 
 ---
 
