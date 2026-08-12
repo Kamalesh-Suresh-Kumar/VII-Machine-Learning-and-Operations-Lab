@@ -1,0 +1,3 @@
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+a3d9ff0865e8   hello-world   "/hello"   14 minutes ago   Exited (0) 14 minutes ago             dazzling_kirch
+c320d142fae8   hello-world   "/hello"   20 minutes ago   Exited (0) 20 minutes ago             gracious_kirch
