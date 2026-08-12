@@ -1,2 +1,10 @@
+# Python Environment
 .venv/
+
+# Jenkins
 target/
+
+# MLflow
+*.db
+mlruns/
+
