@@ -28,3 +28,6 @@ Thumbs.db
 
 # Build artifacts
 target/
+
+# Docker image archives
+*.tar
