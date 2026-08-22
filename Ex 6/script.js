@@ -1,3 +1,6 @@
 function showMessage() {
-    document.getElementById("message").innerHTML = "CI/CD deployment successful!";
+    const message = document.getElementById("message");
+    const info = document.getElementById("info");
+    message.textContent = "CI/CD pipeline verified successfully!";
+    info.textContent = "Version 2 deployed using Jenkins.";
 }

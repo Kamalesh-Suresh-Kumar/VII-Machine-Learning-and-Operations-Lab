@@ -514,6 +514,84 @@ Finished: SUCCESS
 
 ---
 
+## Web Application – Version 2
+
+Version 2 of the web application was created to demonstrate version control and continuous integration.
+
+The application was modified to introduce:
+
+- A Version 2 indicator.
+- An updated user interface.
+- A deployment status indicator.
+- An updated JavaScript response.
+- Updated deployment information.
+
+The Version 2 application displays:
+
+```text
+VERSION 2
+
+CI/CD Web Application
+
+CI/CD deployment successful!
+
+Pipeline Deployment Active
+
+[ Click Me ]
+
+Deployed using Jenkins
+```
+The button interaction was also updated.
+
+After clicking the button, the application displays:
+
+```
+CI/CD pipeline verified successfully!
+Version 2 deployed using Jenkins.
+```
+
+---
+
+Version 2 Version-Control Workflow
+
+The Version 2 modifications were tracked using Git.
+
+The workflow followed was:
+
+```
+Version 1
+    |
+    | Modify HTML, CSS and JavaScript
+    v
+Version 2
+    |
+    | git status
+    v
+Modified Files
+    |
+    | git add
+    v
+Staging Area
+    |
+    | git commit
+    v
+New Git Version
+    |
+    | git push
+    v
+GitHub Repository
+    |
+    v
+Jenkins
+    |
+    v
+New CI/CD Build
+```
+
+The Version 2 changes were committed separately from Version 1 to demonstrate Git version control.
+
+---
+
 ## Result
 
 A CI/CD pipeline for the web application was successfully implemented using Git, GitHub, Jenkins, and a local Python HTTP server.

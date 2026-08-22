@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CI/CD Demo</title>
+    <title>CI/CD Web Application - Version 2</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <div class="version">VERSION 2</div>
       <h1>CI/CD Web Application</h1>
-      <p id="message">Deployed using Jenkins</p>
+      <p id="message">CI/CD deployment successful!</p>
+      <div class="status">
+        <span class="status-dot"></span>
+        Pipeline Deployment Active
+      </div>
       <button onclick="showMessage()">Click Me</button>
+      <p id="info">Deployed using Jenkins</p>
     </div>
     <script src="script.js"></script>
   </body>
