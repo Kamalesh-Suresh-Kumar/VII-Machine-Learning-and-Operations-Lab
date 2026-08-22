@@ -1,0 +1,71 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Validate') {
+            steps {
+                sh '''
+                    echo "Checking Ex 6 files..."
+                    test -f "Ex 6/index.html"
+                    test -f "Ex 6/style.css"
+                    test -f "Ex 6/script.js"
+                    echo "All required files are present."
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    echo "Testing HTML, CSS and JavaScript files..."
+
+                    grep -q "<html" "Ex 6/index.html"
+                    grep -q "<link" "Ex 6/index.html"
+                    grep -q "<script" "Ex 6/index.html"
+
+                    test -s "Ex 6/style.css"
+                    test -s "Ex 6/script.js"
+
+                    echo "All tests passed successfully."
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    echo "Deploying Ex 6 web application..."
+
+                    pkill -f "python3 -m http.server 8000" || true
+
+                    nohup python3 -m http.server 8000 \
+                        --directory "Ex 6" \
+                        > /tmp/ex6-server.log 2>&1 &
+
+                    sleep 3
+
+                    echo "Web application deployed successfully."
+                    echo "Access URL: http://localhost:8000"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'CI/CD pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'CI/CD pipeline failed.'
+        }
+    }
+}
