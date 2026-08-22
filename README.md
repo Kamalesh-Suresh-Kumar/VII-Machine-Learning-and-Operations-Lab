@@ -4,7 +4,7 @@
 
 This repository contains the practical experiments performed as part of the **VII – Machine Learning and Operations Lab**.
 
-The experiments provide hands-on experience with software version control, continuous integration and delivery, machine learning experiment tracking, model lifecycle management, and containerization.
+The experiments provide hands-on experience with software version control, continuous integration and delivery, machine learning experiment tracking, model lifecycle management, containerization, and web application CI/CD.
 
 ---
 
@@ -14,18 +14,20 @@ Machine Learning Operations (MLOps) combines machine learning development with s
 
 This laboratory focuses on the fundamental tools and workflows used in an MLOps environment.
 
-The experiments progressively introduce the major stages of an MLOps workflow:
+The experiments progressively introduce the major stages of an MLOps and DevOps workflow:
 
 ```text
 Version Control
-      ↓
+       ↓
 CI/CD Automation
-      ↓
+       ↓
 Experiment Tracking
-      ↓
+       ↓
 Model Registry
-      ↓
+       ↓
 Containerization
+       ↓
+Web Application CI/CD
 ```
 
 ---
@@ -38,7 +40,8 @@ Containerization
 | Ex 2 | Implementing a CI/CD Pipeline with Jenkins | Jenkins, Maven, GitHub | Continuous Integration and Delivery |
 | Ex 3 | Experiment Tracking Using MLflow | MLflow | Experiment Tracking |
 | Ex 4 | MLflow Model Registry | MLflow | Model Versioning and Lifecycle Management |
-| Ex 5 | Docker Installation and Verification | Docker Desktop | Containerization |
+| Ex 5 | Exploring Containerization and Application Deployment with Docker | Docker Desktop | Containerization |
+| Ex 6 | Applying CI/CD Principles to Web Development Using Jenkins, Git, and Local HTTP Server | Jenkins, Git, GitHub, Python | Web Application CI/CD |
 
 ---
 
@@ -141,37 +144,127 @@ Model versions and associated metadata were managed and viewed through the MLflo
 
 ---
 
-## Experiment 5 – Docker Installation and Verification
+## Experiment 5 – Exploring Containerization and Application Deployment with Docker
 
 ### Objective
 
-To install Docker Desktop on Windows and verify that the Docker environment is working correctly by running the Docker `hello-world` container.
+To understand and practice Docker containerization by installing and verifying Docker, managing Docker images and containers, deploying an Nginx web server, practicing Docker commands, creating Dockerfiles, building and running custom Docker images, working with Docker volumes and networking, and deploying a Python web application using Docker.
 
 ### Key Concepts
 
 - Docker Desktop
 - Docker Engine
+- Docker Compose
 - Docker images
 - Docker containers
-- Docker Hub
-- Container execution
-- Docker Compose
+- Dockerfiles
+- Docker volumes
+- Docker networking
+- Nginx
+- Python application containerization
+- Port mapping
+- Docker image export and import
 
 ### Outcome
 
-Docker Desktop was successfully installed and configured on Windows.
+Docker was successfully installed and verified on Windows.
 
-The installation was verified using Docker commands, and the official `hello-world` container was successfully executed.
+Docker images and containers were successfully managed using Docker commands.
+
+Nginx was deployed and accessed through a browser.
+
+Custom Docker images were created and executed.
+
+Docker volumes and networking were explored.
+
+A Python web application was successfully containerized and deployed.
+
+Docker image export and import using `.tar` files were also demonstrated.
+
+---
+
+## Experiment 6 – Applying CI/CD Principles to Web Development Using Jenkins, Git, and Local HTTP Server
+
+### Objective
+
+To implement and demonstrate Continuous Integration and Continuous Deployment (CI/CD) principles for a web application using Git, GitHub, Jenkins, and a local Python HTTP server.
+
+### Key Concepts
+
+- Git
+- GitHub
+- Version Control
+- Jenkins
+- CI/CD
+- Jenkins Pipeline
+- HTML
+- CSS
+- JavaScript
+- Python HTTP Server
+- Automated validation
+- Automated testing
+- Automated deployment
+- Application versioning
+
+### Experiment Description
+
+A static web application was developed using HTML, CSS, and JavaScript.
+
+Git was used to maintain the source code under version control, while GitHub was used as the remote repository.
+
+Jenkins was configured to obtain the application source code and execute a CI/CD pipeline.
+
+The Jenkins pipeline consisted of the following stages:
+
+```text
+Checkout
+   ↓
+Validate
+   ↓
+Test
+   ↓
+Deploy
+```
+
+The application was deployed using Python's built-in HTTP server and verified through a web browser.
+
+Two application versions were implemented.
+
+Version 1 demonstrated the initial CI/CD workflow.
+
+Version 2 demonstrated application modification, Git version control, committing changes, pushing the updated version to GitHub, and processing the updated source code through Jenkins.
+
+### Outcome
+
+The web application was successfully integrated with Git, GitHub, and Jenkins.
+
+Jenkins successfully checked out the source code, validated the application files, tested the HTML, CSS, and JavaScript files, and deployed the application using a local Python HTTP server.
+
+Version 2 was successfully created, committed, and pushed to GitHub.
+
+The updated application was successfully integrated into the CI/CD workflow.
+
+The application was successfully accessed through:
+
+```text
+http://localhost:8000
+```
+
+The Jenkins pipeline completed successfully with:
+
+```text
+Finished: SUCCESS
+```
 
 ---
 
 ## Overall MLOps Workflow
 
-The experiments together demonstrate a basic end-to-end MLOps workflow:
+The completed experiments demonstrate the following overall workflow:
 
 ```text
 ┌──────────────────────────────┐
-│          Git / GitHub        │
+│        Git / GitHub          │
 │       Version Control        │
 └──────────────┬───────────────┘
                │
@@ -184,19 +277,26 @@ The experiments together demonstrate a basic end-to-end MLOps workflow:
                ↓
 ┌──────────────────────────────┐
 │           MLflow             │
-│     Experiment Tracking      │
+│      Experiment Tracking     │
 └──────────────┬───────────────┘
                │
                ↓
 ┌──────────────────────────────┐
-│      MLflow Model Registry   │
-│    Model Version Management  │
+│     MLflow Model Registry    │
+│   Model Version Management   │
 └──────────────┬───────────────┘
                │
                ↓
 ┌──────────────────────────────┐
-│            Docker            │
-│        Containerization      │
+│           Docker             │
+│       Containerization       │
+└──────────────┬───────────────┘
+               │
+               ↓
+┌──────────────────────────────┐
+│      Web Application CI/CD   │
+│   Jenkins + Git + HTTP      │
+│           Server             │
 └──────────────────────────────┘
 ```
 
@@ -209,11 +309,12 @@ The experiments together demonstrate a basic end-to-end MLOps workflow:
 | Version Control | Git, GitHub |
 | CI/CD | Jenkins |
 | Build Automation | Apache Maven |
-| Programming | Python, Java |
+| Programming | Python, Java, HTML, CSS, JavaScript |
 | Experiment Tracking | MLflow |
 | Model Management | MLflow Model Registry |
 | Containerization | Docker |
 | Container Platform | Docker Desktop |
+| Web Server | Python HTTP Server, Nginx |
 | Development Environment | Visual Studio Code |
 | Operating System | Windows, WSL |
 
@@ -231,14 +332,22 @@ After completing these experiments, the following practical skills were develope
 - Configuring Jenkins for automated builds.
 - Integrating GitHub with Jenkins.
 - Building and testing Maven-based applications.
+- Creating Jenkins Pipeline workflows.
 - Tracking machine learning experiments using MLflow.
 - Recording parameters and metrics.
 - Managing machine learning models using MLflow Model Registry.
 - Understanding model versioning and metadata.
 - Installing and configuring Docker Desktop.
 - Working with Docker images and containers.
-- Verifying a Docker installation using the `hello-world` container.
-- Understanding the relationship between development, automation, experiment tracking, model management, and deployment environments.
+- Creating and using Dockerfiles.
+- Working with Docker volumes and networks.
+- Containerizing Python applications.
+- Deploying web applications using Docker.
+- Understanding Git-based web application CI/CD.
+- Validating and testing web application source files through Jenkins.
+- Deploying a web application using a local HTTP server.
+- Maintaining application versions using Git.
+- Integrating updated application versions into a Jenkins pipeline.
 
 ---
 
@@ -252,7 +361,8 @@ The repository is organized according to the laboratory experiments.
 | `Ex 2` | Jenkins CI/CD pipeline experiment |
 | `Ex 3` | MLflow experiment tracking |
 | `Ex 4` | MLflow Model Registry |
-| `Ex 5` | Docker installation and verification |
+| `Ex 5` | Docker containerization and application deployment |
+| `Ex 6` | Web application CI/CD using Jenkins, Git, and local HTTP server |
 
 Each experiment contains its own README file describing the objective, software used, procedure, verification, output, result, and conclusion.
 
@@ -260,56 +370,11 @@ Each experiment contains its own README file describing the objective, software 
 
 ## Final Result
 
-All five laboratory experiments were successfully completed.
+All six laboratory experiments were successfully completed.
 
-The laboratory provided practical exposure to the core tools and workflows used in MLOps, beginning with source-code management and progressing through CI/CD automation, machine learning experiment tracking, model lifecycle management, and containerization.
+The laboratory provided practical exposure to core tools and workflows used in MLOps and DevOps, beginning with source-code management and progressing through CI/CD automation, machine learning experiment tracking, model lifecycle management, containerization, and web application deployment.
 
-The completed experiments establish a foundation for implementing more advanced MLOps workflows involving automated model training, deployment, monitoring, and scalable machine learning systems.
-
----
-
-## Future Scope
-
-The completed experiments establish the foundation of an MLOps workflow through Git, Jenkins, MLflow, MLflow Model Registry, and Docker.
-
-The upcoming experiments will extend this foundation toward more advanced DevOps and MLOps practices, covering containerized CI/CD, Kubernetes orchestration, cloud-based automation, deployment strategies, and application security testing.
-
-### Planned Future Experiments
-
-| Area | Planned Experiment | Focus |
-|---|---|---|
-| Git & GitHub | Implement GitHub Operations | Remote repository management, collaboration, and GitHub-based workflows |
-| CI/CD | CI/CD for Web Development using Jenkins, Git and Local HTTP Server | Automated build, testing, and deployment of web applications |
-| Containerization | Application Deployment with Docker | Building Docker images and deploying applications using containers |
-| Containerized CI/CD | Jenkins, Git and Docker Containers | Integrating Jenkins CI/CD with Docker-based application deployment |
-| Container Orchestration | Container Orchestration using Kubernetes | Managing containers, deployments, services, scaling, and orchestration |
-| Cloud CI/CD | CI/CD Pipeline using Cloud Platform | Implementing cloud-based CI/CD workflows using GitHub and cloud services |
-| Deployment Strategy | Blue-Green Deployment | Reducing application downtime and enabling safer application releases |
-| Security & Testing | Testing using OWASP ZAP and Postman | API testing, security testing, vulnerability detection, and application validation |
-
-### Future MLOps Progression
-
-The planned experiments will extend the current workflow as follows:
-
-```text
-Git / GitHub
-      ↓
-Jenkins CI/CD
-      ↓
-Docker
-      ↓
-Jenkins + Docker
-      ↓
-Kubernetes
-      ↓
-Cloud CI/CD
-      ↓
-Blue-Green Deployment
-      ↓
-API Testing
-      ↓
-Security Testing
-```
+The completed experiments establish a strong foundation for implementing more advanced MLOps and DevOps workflows involving containerized CI/CD, Kubernetes orchestration, cloud deployment, deployment strategies, monitoring, and application security testing.
 
 ---
 
